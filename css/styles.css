@@ -705,7 +705,7 @@ textarea {
 
 }
 
-#user-privacy:checked+ .privacy-lable .custom-check {
+#user-privacy:checked~ .privacy-lable .custom-check {
     background-color: #404bbf;
     border: none;
     fill:#f4f4fd;
