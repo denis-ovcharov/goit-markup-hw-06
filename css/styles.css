@@ -697,6 +697,7 @@ textarea {
     border-radius: 2px;
     background-color: #f4f4fd;
     display: inline-flex;
+    margin-right: 8px;
     align-items: center;
     justify-content: center;
     fill: transparent;
