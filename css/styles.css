@@ -448,7 +448,7 @@ textarea {
     font-size: 12px;
     line-height: 2;
     letter-spacing: 0.04em;
-    border: 1px;
+    border: 1px solid transparent;
     background-color: transparent;
     border-radius: 4px;
     width: 264px;
@@ -814,10 +814,12 @@ textarea {
     .navigation-list {
         display: none;
     }
-    .contacts {
+    .contacts,
+    .benefits-icon-container {
         display: none;
     }
-    .menu-btn {
+    .menu-btn
+     {
         display: block;
     }
     .container.header {
@@ -831,9 +833,6 @@ textarea {
     }
     .head .logo {
         margin:0;
-        }
-    .benefits-icon-container {
-        display: none;
         }
     .benefits-list {
         flex-direction: column;
@@ -859,27 +858,25 @@ textarea {
     .item-title {
         font-size: 20px;
     }
-
-    .image {
-        max-width: 288px;
+    .bottom .container {
+        flex-direction: column;
+        gap: 72px;
+        align-items: center;
+        text-align: center;
     }
-    .bottom .container,
+    
+    .bottom-logo-container,
+    .bottom-social-links-container,
+    .bottom-form-container {
+        margin-right: 0;
+    }
+    
     .bottom-form-input-and-btn {
         flex-direction: column;
-        
     }
     .bottom-btn {
-        max-width: 164px;
+        width: 165px;
+        margin: 0 auto;
     }
-    .bottom-text {
-        width: 288px;
-        margin-bottom: 72px;
-    }
-    .bottom-social-links-container {
-        margin-bottom: 72px;
-    }
-        .bottom-form-input-and-btn {
-        align-items: center;
-    }
-
+    
     }
