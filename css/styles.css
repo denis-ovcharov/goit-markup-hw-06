@@ -814,10 +814,8 @@ textarea {
     .container {
         max-width: 320px;
     }
-    .navigation-list {
-        display: none;
-    }
     .contacts,
+    .navigation-list,
     .benefits-icon-container {
         display: none;
     }
@@ -844,6 +842,9 @@ textarea {
         padding: 72px 52px;
         justify-content: center;
     }
+    .hero-title {
+        font-size: 36px;
+    }
     .benefits-list {
         flex-direction: column;
         gap: 72px;
@@ -854,7 +855,7 @@ textarea {
         max-width: 288px;
     }
     
-    .item-title{
+    .benefits .item-title{
         font-weight: 700;
         font-size: 36px;
         text-align: center;
@@ -864,15 +865,13 @@ textarea {
         }
     .team-list {
         gap: 72px;
-        }
-    .team-list {
         justify-content: center;
     }
     .portfolio-list {
         justify-content: center;
     }
-    .item-title {
-        font-size: 20px;
+    .portfolio-list-item {
+        max-width: 288px;   
     }
     .bottom .container {
         flex-direction: column;
@@ -893,6 +892,9 @@ textarea {
     .bottom-btn {
         width: 165px;
         margin: 0 auto;
+    }
+    .bottom-form {
+            opacity: 0.3;
     }
     }
 @media (min-width:768px) and (max-width:1157px) {
@@ -925,10 +927,10 @@ textarea {
     }
     .team-list {
         justify-content: center;
-        }
+    }
     .portfolio-list {
         justify-content: center;
-                        }
+    }
     .bottom .container {
     flex-direction: row;
     flex-wrap: wrap;
@@ -939,5 +941,8 @@ textarea {
 }
 .bottom-social-links-container {
     margin-right: 0;
+}
+.bottom-form {
+    opacity: 0.3; 
 }
 }                
