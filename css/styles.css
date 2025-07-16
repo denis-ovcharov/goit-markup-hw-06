@@ -146,6 +146,7 @@ textarea {
 .contacts-list {
     display: flex;
     gap: 40px;
+    flex-wrap: wrap;
 }
 .menu-btn {
     border: none;
@@ -898,13 +899,28 @@ textarea {
     }
     }
 @media (min-width:768px) and (max-width:1157px) {
-    .head .logo,
-    .navigation-container {
+    .container {
+        max-width: 768px;
+        padding: 0;
+    }
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url(../images/people-office\(768x436\).jpg);
+        max-width: 768px;
+        padding: 112px 136px;
+        background-size:;
+    }
+    .head .logo
+     {
             margin-right: 120px;
+    }
+    .navigation-container {
+        margin-right: 120px;
     }
     .contacts-list {
         flex-direction: column;
         gap: 12px;
+
     }
     .benefits-icon-container {
         display: none;
@@ -935,6 +951,9 @@ textarea {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px;
+    align-items: center;
+    justify-content: center;
+
   }
   .bottom-logo-container {
     margin-right: 0;
@@ -945,4 +964,5 @@ textarea {
 .bottom-form {
     opacity: 0.3; 
 }
+
 }                
