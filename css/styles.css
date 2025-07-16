@@ -811,6 +811,9 @@ textarea {
 /* MOBILE */
 
 @media (max-width:767px) {
+    .container {
+        max-width: 320px;
+    }
     .navigation-list {
         display: none;
     }
@@ -834,6 +837,13 @@ textarea {
     .head .logo {
         margin:0;
         }
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office\(320x432\).jpg);
+        max-width: 320px;
+        padding: 72px 52px;
+        justify-content: center;
+    }
     .benefits-list {
         flex-direction: column;
         gap: 72px;
