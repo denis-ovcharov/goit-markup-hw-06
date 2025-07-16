@@ -952,7 +952,8 @@ textarea {
     flex-wrap: wrap;
     gap: 24px;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    padding-left: 108px;
 
   }
   .bottom-logo-container {
@@ -963,6 +964,9 @@ textarea {
 }
 .bottom-form {
     opacity: 0.3; 
+}
+.bottom-form-container {
+    margin-top: 72px;
 }
 
 }                
