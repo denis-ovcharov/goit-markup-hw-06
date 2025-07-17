@@ -515,8 +515,8 @@ textarea {
     display: flex;
     justify-content: center;
     z-index: 999;
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 0;
+    pointer-events: none;
 
 }
 
