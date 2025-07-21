@@ -843,7 +843,7 @@ textarea {
         }
     .hero {
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url(../images/people-office\(320x432\).jpg);
+            url(../images/people-office-mob.jpg);
         max-width: 320px;
         padding: 72px 52px;
         justify-content: center;
@@ -924,7 +924,7 @@ textarea {
     }
     .hero {
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-        url(../images/people-office\(768x436\).jpg);
+        url(../images/people-office-tab.jpg);
         max-width: 768px;
         padding: 112px 136px;
     }
