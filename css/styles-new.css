@@ -45,7 +45,7 @@ textarea {
 .container {
     max-width: 320px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 0 16px;
 }
 
 @media screen and (min-width:768px) {
@@ -141,8 +141,8 @@ textarea {
 .header {
     display: flex;
     align-items: center;
-    padding: 0 15px;
     justify-content: space-between;
+    padding: 16px;
 }
 
 .navigation-container {
@@ -186,6 +186,10 @@ textarea {
 }
 
 @media screen and (min-width:768px) {
+    .header {
+        padding: 0 16px;
+    }
+
     .head .logo {
         margin-right: 120px;
     }
@@ -195,6 +199,15 @@ textarea {
         gap: 12px;
 
     }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .contacts,
+    .navigation-list {
+        display: flex;
+    }
 }
 
 @media screen and (min-width:1158px) {
@@ -202,32 +215,45 @@ textarea {
         margin-right: 76px;
     }
 
+    .contacts-list {
+        flex-direction: row;
+        gap: 40px;
+    }
 }
 
 /* HERO SECTION */
 
 .hero {
     background-color: #2e2f42;
-    padding: 188px 0 188px;
+    padding: 72px 52px;
     display: flex;
     text-align: center;
+    justify-content: center;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-        url(../images/people-office.jpg);
+        url(../images/people-office-mob.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 1440px;
+    max-width: 320px;
     margin: 0 auto;
+}
+
+@media (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office-mob@2x.jpg);
+
+    }
 }
 
 .hero-title {
     font-weight: 700;
-    font-size: 56px;
+    font-size: 36px;
     line-height: 1.07;
     letter-spacing: 0.02em;
     color: #ffffff;
     max-width: 496px;
-    margin-bottom: 48px;
+    margin-bottom: 72px;
 }
 
 .hero-btn {
@@ -252,6 +278,47 @@ textarea {
     ;
 }
 
+@media screen and (min-width:768px) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office-tab.jpg);
+        max-width: 768px;
+        padding: 112px 136px;
+    }
+
+    .hero-title {
+        font-size: 56px;
+        margin-bottom: 36px;
+    }
+}
+
+@media screen and (min-width:768px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office-tab@2x.jpg);
+    }
+}
+
+@media screen and (min-width:1158px) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office.jpg);
+        max-width: 1440px;
+        padding: 188px 0 188px;
+    }
+
+    .hero-title {
+        margin-bottom: 48px;
+    }
+}
+
+@media screen and (min-width:1158px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office@2x.jpg);
+    }
+}
+
 /* BENEFITS */
 .visually-hidden {
     position: absolute;
@@ -266,16 +333,18 @@ textarea {
     overflow: hidden;
 }
 
-.item-title {
-    font-weight: 500;
-    font-size: 20px;
+.benefits-item-title {
+    font-weight: 700;
+    font-size: 36px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #2e2f42;
     margin-bottom: 8px;
+    text-align: center;
 }
 
-.item-descr {
+.benefits-item-descr {
+    font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
@@ -284,16 +353,17 @@ textarea {
 
 .benefits-list {
     display: flex;
-    gap: 24px;
-
+    flex-wrap: wrap;
+    gap: 72px;
+    justify-content: center;
 }
 
 .benefits-list-item {
-    flex-basis: calc((100% - 72px) / 4);
+    max-width: 288px;
 }
 
 .benefits-icon-container {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     height: 112px;
@@ -303,6 +373,34 @@ textarea {
     margin-bottom: 8px;
 }
 
+@media screen and (min-width:768px) {
+    .benefits-list {
+        gap: 72px 24px;
+    }
+
+    .benefits-item-title {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width:1158px) {
+    .benefits-icon-container {
+        display: flex;
+    }
+
+    .benefits-list-item {
+        flex-basis: calc((100% - 72px) / 4);
+    }
+
+    .benefits-item-title {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .benefits-item-descr {
+        font-weight: 400;
+    }
+}
 
 /* TEAM */
 
@@ -328,11 +426,27 @@ textarea {
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
+.team-item-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin-bottom: 8px;
+}
+
+.team-item-descr {
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
 .team-list {
     display: flex;
-    gap: 24px;
+    gap: 72px;
     flex-basis: calc((100% - 72px) / 4);
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .team-list-item .item-text {
@@ -375,6 +489,12 @@ textarea {
     fill: #f4f4fd;
 }
 
+@media screen and (min-width:768px) {
+    .team-list {
+        gap: 64px 24px;
+    }
+}
+
 /* PORTFOLIO */
 
 .portfolio .item-text {
@@ -389,6 +509,7 @@ textarea {
     gap: 24px;
     row-gap: 48px;
     flex-basis: calc((100% - 48px) / 3);
+    justify-content: center;
 }
 
 .portfolio-list-item:hover,
@@ -404,6 +525,7 @@ textarea {
 
 .portfolio-list-item {
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 288px;
 }
 
 .portfolio-img {
@@ -429,12 +551,33 @@ textarea {
     text-align: left;
 }
 
+@media screen and (min-width:768px) {
+    .portfolio-list-item {
+        max-width: 356px;
+    }
+}
+
+@media screen and (min-width:1158px) {
+    .portfolio-list-item {
+        max-width: 360px;
+    }
+}
+
 /* FOOTER */
 
 .bottom {
     background-color: #2e2f42;
     padding: 100px 0 100px;
     margin: 0 auto;
+}
+
+.bottom .container {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-bottom-part {
@@ -473,19 +616,6 @@ textarea {
     background-color: #31d0aa;
 }
 
-.bottom-logo-container {
-    margin-right: 120px;
-}
-
-.bottom .container {
-    display: flex;
-    align-items: baseline;
-}
-
-.bottom-social-links-container {
-    margin-right: 80px;
-}
-
 .bottom-form::placeholder {
 
     color: #ffffff;
@@ -504,6 +634,7 @@ textarea {
     outline: none;
     color: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    opacity: 0.3;
 }
 
 .bottom-form:placeholder-shown {
@@ -545,7 +676,36 @@ textarea {
 
 .bottom-form-input-and-btn {
     display: flex;
+    flex-direction: column;
     gap: 24px;
+}
+
+@media screen and (min-width:768px) {
+    .bottom .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 72px 24px;
+        align-items: center;
+        justify-content: start;
+        padding-left: 108px;
+        text-align: left;
+    }
+
+    .bottom-form-input-and-btn {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width:1158px) {
+    .bottom .container {
+        flex-wrap: nowrap;
+        gap: 80px;
+        padding-left: 15px;
+    }
+
+    .bottom-logo-container {
+        margin-right: 40px;
+    }
 }
 
 /* MODAL OVERLAY */
