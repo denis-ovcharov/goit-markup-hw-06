@@ -27,8 +27,8 @@ p {
 }
 
 .section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 96px;
+    padding-bottom: 96px;
 }
 
 img {
@@ -45,7 +45,7 @@ textarea {
 .container {
     max-width: 320px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 0 16px;
 }
 
 @media screen and (min-width:768px) {
@@ -59,6 +59,10 @@ textarea {
         max-width: 1158px;
         padding: 0 15px;
     }
+        .section {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
 }
 
 /* HEADER */
@@ -71,6 +75,7 @@ textarea {
     line-height: 1.17;
     text-transform: uppercase;
     color: #4d5ae5;
+    padding:16px 0;
 }
 
 .logo-top-part {
@@ -141,7 +146,6 @@ textarea {
 .header {
     display: flex;
     align-items: center;
-    padding: 0 15px;
     justify-content: space-between;
 }
 
@@ -186,6 +190,10 @@ textarea {
 }
 
 @media screen and (min-width:768px) {
+    .header {
+        padding: 0 16px;
+    }
+
     .head .logo {
         margin-right: 120px;
     }
@@ -193,7 +201,18 @@ textarea {
     .contacts-list {
         flex-direction: column;
         gap: 12px;
+    }
+    .contacts-link {
+        font-size: 12px;
+    }
 
+    .menu-btn {
+        display: none;
+    }
+
+    .contacts,
+    .navigation-list {
+        display: flex;
     }
 }
 
@@ -202,32 +221,48 @@ textarea {
         margin-right: 76px;
     }
 
+    .contacts-list {
+        flex-direction: row;
+        gap: 40px;
+    }
+    .contacts-link {
+        font-size: 16px;
+    }
 }
 
 /* HERO SECTION */
 
 .hero {
     background-color: #2e2f42;
-    padding: 188px 0 188px;
+    padding: 72px 52px;
     display: flex;
     text-align: center;
+    justify-content: center;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-        url(../images/people-office.jpg);
+        url(../images/people-office-mob.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    max-width: 1440px;
+    max-width: 320px;
     margin: 0 auto;
+}
+
+@media (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office-mob@2x.jpg);
+
+    }
 }
 
 .hero-title {
     font-weight: 700;
-    font-size: 56px;
+    font-size: 36px;
     line-height: 1.07;
     letter-spacing: 0.02em;
     color: #ffffff;
     max-width: 496px;
-    margin-bottom: 48px;
+    margin-bottom: 72px;
 }
 
 .hero-btn {
@@ -252,6 +287,46 @@ textarea {
     ;
 }
 
+@media screen and (min-width:768px) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office-tab.jpg);
+        max-width: 768px;
+    }
+
+    .hero-title {
+        font-size: 56px;
+        margin-bottom: 36px;
+    }
+}
+
+@media screen and (min-width:768px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office-tab@2x.jpg);
+    }
+}
+
+@media screen and (min-width:1158px) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office.jpg);
+        max-width: 1440px;
+        padding: 188px 0 188px;
+    }
+
+    .hero-title {
+        margin-bottom: 48px;
+    }
+}
+
+@media screen and (min-width:1158px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/people-office@2x.jpg);
+    }
+}
+
 /* BENEFITS */
 .visually-hidden {
     position: absolute;
@@ -266,16 +341,18 @@ textarea {
     overflow: hidden;
 }
 
-.item-title {
-    font-weight: 500;
-    font-size: 20px;
+.benefits-item-title {
+    font-weight: 700;
+    font-size: 36px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #2e2f42;
     margin-bottom: 8px;
+    text-align: center;
 }
 
-.item-descr {
+.benefits-item-descr {
+    font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
@@ -284,16 +361,17 @@ textarea {
 
 .benefits-list {
     display: flex;
-    gap: 24px;
-
+    flex-wrap: wrap;
+    gap: 72px;
+    justify-content: center;
 }
 
 .benefits-list-item {
-    flex-basis: calc((100% - 72px) / 4);
+    max-width: 288px;
 }
 
 .benefits-icon-container {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     height: 112px;
@@ -303,6 +381,34 @@ textarea {
     margin-bottom: 8px;
 }
 
+@media screen and (min-width:768px) {
+    .benefits-list {
+        gap: 72px 24px;
+    }
+
+    .benefits-item-title {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width:1158px) {
+    .benefits-icon-container {
+        display: flex;
+    }
+
+    .benefits-list-item {
+        flex-basis: calc((100% - 72px) / 4);
+    }
+
+    .benefits-item-title {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .benefits-item-descr {
+        font-weight: 400;
+    }
+}
 
 /* TEAM */
 
@@ -328,11 +434,27 @@ textarea {
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
+.team-item-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin-bottom: 8px;
+}
+
+.team-item-descr {
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
 .team-list {
     display: flex;
-    gap: 24px;
+    gap: 72px;
     flex-basis: calc((100% - 72px) / 4);
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .team-list-item .item-text {
@@ -375,6 +497,12 @@ textarea {
     fill: #f4f4fd;
 }
 
+@media screen and (min-width:768px) {
+    .team-list {
+        gap: 64px 24px;
+    }
+}
+
 /* PORTFOLIO */
 
 .portfolio .item-text {
@@ -386,9 +514,9 @@ textarea {
 .portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
-    row-gap: 48px;
+    gap: 48px 24px;
     flex-basis: calc((100% - 48px) / 3);
+    justify-content: center;
 }
 
 .portfolio-list-item:hover,
@@ -404,11 +532,25 @@ textarea {
 
 .portfolio-list-item {
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 288px;
 }
 
 .portfolio-img {
     position: relative;
     overflow: hidden;
+}
+.portfolio-item-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin-bottom: 8px;
+}
+.portfolio-item-descr {
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
 }
 
 .portfolio .text {
@@ -429,12 +571,39 @@ textarea {
     text-align: left;
 }
 
+@media screen and (min-width:768px) {
+    .portfolio-list-item {
+        max-width: 356px;
+    }
+    .portfolio-list {
+        gap: 72px 24px;
+    }
+}
+
+@media screen and (min-width:1158px) {
+    .portfolio-list-item {
+        max-width: 360px;
+    }
+        .portfolio-list {
+            gap: 48px 24px;
+        }
+}
+
 /* FOOTER */
 
 .bottom {
     background-color: #2e2f42;
     padding: 100px 0 100px;
     margin: 0 auto;
+}
+
+.bottom .container {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-bottom-part {
@@ -446,6 +615,7 @@ textarea {
     letter-spacing: 0.02em;
     color: #f4f4fd;
     max-width: 264px;
+    text-align: left;
 }
 
 .bottom .logo {
@@ -473,19 +643,6 @@ textarea {
     background-color: #31d0aa;
 }
 
-.bottom-logo-container {
-    margin-right: 120px;
-}
-
-.bottom .container {
-    display: flex;
-    align-items: baseline;
-}
-
-.bottom-social-links-container {
-    margin-right: 80px;
-}
-
 .bottom-form::placeholder {
 
     color: #ffffff;
@@ -498,12 +655,13 @@ textarea {
     border: 1px solid transparent;
     background-color: transparent;
     border-radius: 4px;
-    width: 264px;
+    width: 288px;
     height: 40px;
     padding: 8px 16px;
     outline: none;
     color: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    opacity: 0.3;
 }
 
 .bottom-form:placeholder-shown {
@@ -529,7 +687,8 @@ textarea {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 165px;
+    max-width: 165px;
+    margin: 0 auto;
 }
 
 .bottom-btn:hover,
@@ -545,7 +704,42 @@ textarea {
 
 .bottom-form-input-and-btn {
     display: flex;
+    flex-direction: column;
     gap: 24px;
+}
+
+@media screen and (min-width:768px) {
+    .bottom .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 72px 24px;
+        align-items: center;
+        justify-content: start;
+        padding-left: 108px;
+        text-align: left;
+    }
+
+    .bottom-form-input-and-btn {
+        flex-direction: row;
+    }
+    .bottom-form {
+        width: 264px;
+    }
+}
+
+@media screen and (min-width:1158px) {
+    .bottom .container {
+        flex-wrap: nowrap;
+        gap: 80px;
+        padding-left: 15px;
+    }
+
+    .bottom-logo-container {
+        margin-right: 40px;
+    }
+        .bottom-form {
+            opacity: 1;
+        }
 }
 
 /* MODAL OVERLAY */
@@ -577,16 +771,15 @@ textarea {
     left: 50%;
     transform: translate(-50%, -50%);
     background: #fcfcfc;
-    min-height: 584px;
-    width: 408px;
+    min-height: 623px;
+    width: 288px;
     border-radius: 4px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 72px 24px 24px 24px;
+    padding: 72px 16px 24px 16px;
 }
-
 .modal-window-text {
     margin-bottom: 16px;
     font-weight: 500;
@@ -690,7 +883,7 @@ textarea {
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -751,13 +944,17 @@ textarea {
 }
 
 .modal-close:hover,
+.mobile-menu-close:hover,
+.mobile-menu-close:focus,
 .modal-close:focus {
     background-color: #404bbf;
     border: none;
 }
 
 .modal-close:hover .close-img,
-.modal-close:focus .close-img {
+.modal-close:focus .close-img,
+.mobile-menu-close:hover .close-img,
+.mobile-menu-close:focus .close-img {
     fill: #FFF;
 }
 
@@ -775,6 +972,7 @@ textarea {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1),
         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
 
 
 }
@@ -784,25 +982,52 @@ textarea {
     border: none;
     fill: #f4f4fd;
 }
+@media screen and (min-width:768px) {
+.modal-window {
+        min-height: 584px;
+        width: 408px;
+        padding: 72px 24px 24px 24px;
+            
+    }
+}
 
 /* MOBILE MENU */
 
-.mobile-menu-overlay {
-    background: rgba(46, 47, 66, 0.4);
+.mobile-menu {
+    background-color: #fff;
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0%;
     left: 0%;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     z-index: 999;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
+    overflow: hidden;
+}
+.mobile-menu-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+    width: 24px;
+     height: 24px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mobile-menu-overlay.is-open {
+.mobile-menu.is-open {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -814,9 +1039,11 @@ textarea {
     min-height: 640px;
     transform: translate(-50%, -50%);
     width: 320px;
-    padding-left: 16px;
     padding-top: 72px;
     padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .mob-navigation-list-item-link {
@@ -836,12 +1063,13 @@ textarea {
 .mob-navigation-list-item:first-child .mob-navigation-list-item-link {
     color: #404bbf;
 }
-
+.mob-navigation-container {
+    margin-bottom: auto;
+}
 .mob-navigation-list {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    margin-bottom: 168px;
 }
 
 .mob-contacts-list {
@@ -869,7 +1097,12 @@ textarea {
     color: #4d5ae5;
 }
 
-.mobile-menu-overlay .social-list {
+.mobile-menu .social-list {
     gap: 40px;
     justify-content: left;
+}
+@media screen and (min-width:768px) {
+.mobile-menu {
+    display: none;
+}
 }
