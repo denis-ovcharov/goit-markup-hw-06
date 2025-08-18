@@ -484,7 +484,8 @@ textarea {
     justify-content: center;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.mobile-menu .social-link:hover,
+.mobile-menu .social-link:focus,
 .team .social-link:hover,
 .team .social-link:focus,
 .mobile-menu-overlay .social-link:hover,
