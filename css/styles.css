@@ -1058,6 +1058,9 @@ textarea {
 .mob-navigation-list-item:first-child .mob-navigation-list-item-link {
     color: #404bbf;
 }
+.mob-contacts-list-item:first-child .mob-contacts-link{
+    color: #4d5ae5;
+}
 .mob-navigation-container {
     margin-bottom: auto;
 }
